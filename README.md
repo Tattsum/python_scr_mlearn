@@ -5,7 +5,7 @@ pythonによるスクレイピングと機械学習
 dockerで、Python3 + Anacondaの環境を構築する
 docker の動作確認
 ```
-$ docker run hello^-world
+$ docker run hello-world
 ```
 
 ## Python + Anacondaのイメージをダウンロード
