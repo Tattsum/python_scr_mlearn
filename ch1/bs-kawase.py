@@ -3,10 +3,10 @@ sys.path.append ('/usr/local/lib/python3.4/dist-packages')
 from bs4 import BeautifulSoup
 import urllib.request as req
 
-url = "http://stocks.finance.yahoo.co.jp/stocks/detail/?code=usdjpy"
+url = "http://api.aoikujira.com/kawase/xml/usd"
 res = req.urlopen(url)
 
 soup = BeautifulSoup(res,'html.parser')
 
-price = soup.select_one(".stoksPrice").string
-print ("usd/jpy=",price)
+jpy = soup.select_one("jpy").string
+print ("usd/jpy=",jpy)
