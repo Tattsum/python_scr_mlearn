@@ -24,5 +24,6 @@ $ apt-get update
 $ apt-get upgrade -y
 $ apt-get install python3-pip
 $ pip3 install beautifulsoup4
+$ pip3 install requests
 ```
 その他また追記で追加するかも...
