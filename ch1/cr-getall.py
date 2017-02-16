@@ -1,8 +1,8 @@
 import sys
 sys.path.append ('/usr/local/lib/python3.4/dist-packages')
-from bs4 import BeautifulSoup4
+from bs4 import BeautifulSoup
 import urllib.request
-import urllib.parse 
+import urllib.parse
 from os import makedirs
 import os.path,time,re
 
