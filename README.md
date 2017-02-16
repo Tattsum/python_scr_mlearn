@@ -74,3 +74,18 @@ $ cat <<EOF > /etc/fonts/local.conf
 </fontconfig>
 EOF
 ```
+
+docker imageをcommit
+```
+$ docker ps -a
+# ここにあるコンテナIDをコピペ
+$ docker commit (コンテナID) ubuntu-phantomjs
+```
+
+日本語設定
+```
+docker run -it -v $HOME:$HOME \
+    -e LANG=ja_JP.UTF-8 \
+    -e PYTHONIOENCODING=utf_8 \
+    ubuntu-phantomjs /bin/bash
+```
