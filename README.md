@@ -94,4 +94,5 @@ docker run -it -v $HOME:$HOME \
 ```
 $ pip3 install pyyaml
 $ pip3 install openpyxl
+$ pip3 install pandas
 ```
