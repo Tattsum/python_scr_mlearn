@@ -93,4 +93,5 @@ docker run -it -v $HOME:$HOME \
 3-3から追加 上記のdocker上で追加する
 ```
 $ pip3 install pyyaml
+$ pip3 install openpyxl
 ```
