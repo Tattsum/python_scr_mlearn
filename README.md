@@ -194,3 +194,10 @@ $ sudo easy_install pip
 $ export TF_BINARY_URL=https://storage.googleapis.com/tesnsorflow/mac/cpu/tensorflow-0.10.0-py3-none-any.whl
 $ pip3 install --upgrade $TF_BINARY_URL
 ```
+
+## Jupyter Notebookのセットアップ
+Jupyter Notebookをインストール
+```
+$ pip3 install --upgrade pip3
+$ pip3 install jupyter
+```
