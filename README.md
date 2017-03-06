@@ -136,3 +136,9 @@ $ server mysql start
 $ mysql -u root -p
 mysql > CREATE DATABASE test;
 ```
+
+## モジュール追加
+追加するモジュール
+```
+$ pip3 install tinydb
+```
