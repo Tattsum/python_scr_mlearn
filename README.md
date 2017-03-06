@@ -153,3 +153,44 @@ $ docker run -it \
   -v $HOME:$HOME \
   -p 8080:8080 mlearn
 ```
+
+## Ubuntu Linux (Docker)にtenorFlowをインストール
+- 公式サイトよりdockerのイメージを配布している
+```
+$ docker run -it b.gcr.io/tenorflow/tensorflow:latest-devel
+```
+
+- 手元がLinux OSの場合
+```
+$ sudo apt-get update
+$ sudo apt-get upgrade
+$ sudo apt-get install -y wget
+$ cd ~/
+$ wget https://repo.continuum.io/archive/Anaconda3-4.2.0-Linux-x86_64.sh
+$ chomd 766 Anaconda3-4.2.0-Linux-x86_64.sh
+$ ./Anaconda3-4.2.0-Linux-x86_64.sh
+```
+
+その後インストーラーが出てきて指示に従ってインストール。そのあとにtenorFlowをインストール
+```
+$ conda create -n tensorflow python=3.4
+```
+
+- MacOSの場合
+```
+$ brew update
+$ brew install pyenv
+$ export PYENV_ROOT="$HOME/.pyenv"
+$ export PATH = "$PYENV_ROOT/bin:$PATH"
+$ eval "$(pyenv init _)"
+$ pyenv install Anaconda3-4.1.1
+$ pyenv global Anaconda3-4.1.1
+$ pyenv rehash
+$ sudo easy_install pip
+```
+
+そのあとにtensorflowをインストール
+```
+$ export TF_BINARY_URL=https://storage.googleapis.com/tesnsorflow/mac/cpu/tensorflow-0.10.0-py3-none-any.whl
+$ pip3 install --upgrade $TF_BINARY_URL
+```
