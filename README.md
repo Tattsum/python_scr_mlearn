@@ -214,3 +214,12 @@ $ vim ~/.keras/keras.json
     "backend": "tensorflow"
   }
 ```
+
+## MeCab のインストール
+形態素解析に使われるライブラリ。インストールする
+```
+$ apt-get install -y mecab libmecab-dev mecab-ipadic
+$ apt-get install -y mecab-ipadic-utf8
+$ apt-get install -y libc6-dev build-essential
+$ pip3 install mecab-python3
+```
