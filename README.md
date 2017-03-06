@@ -201,3 +201,16 @@ Jupyter Notebookをインストール
 $ pip3 install --upgrade pip3
 $ pip3 install jupyter
 ```
+
+## keras のインストール
+kerasはPyPIを使う
+```
+$ pip3 install keras
+$ vim ~/.keras/keras.json
+  {
+    "image_dim_ordering": "tf",
+    "epsilon": "1e-07",
+    "floatx": "float32",
+    "backend": "tensorflow"
+  }
+```
