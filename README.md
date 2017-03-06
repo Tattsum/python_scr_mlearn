@@ -128,3 +128,11 @@ docker run -it -v $HOME:$HOME \
     -e PYTHONIOENCODING=utf_8 \
     ubuntu-mysql /bin/bash
 ```
+
+## mysqlを起動
+起動させて、BDを作成
+```
+$ server mysql start
+$ mysql -u root -p
+mysql > CREATE DATABASE test;
+```
