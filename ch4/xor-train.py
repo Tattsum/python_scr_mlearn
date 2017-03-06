@@ -1,35 +1,39 @@
 import sys
 sys.path.append('/usr/local/lib/python3.5/dist-packages')
 
-# TinyDBを使うためライブラリのインポート
-from tinydb import TinyDB, Query
+from sklearn import svm
 
-# データベースに接続 --- (※1)
-filepath = "test-tynydb.json"
-db = TinyDB(filepath)
+# XORの演算結果 --- (※1)
+xor_data = [
+    #P, Q, result
+    [0, 0, 0],
+    [0, 1, 1],
+    [1, 0, 1],
+    [1, 1, 0]
+]
 
-# 既存のデータがあれば破棄 --- (※2)
-db.purge_table('fruits')
+# 学習させるためにデータとラベルに分ける --- (※2)
+data = []
+label = []
+for row in xor_data:
+    p = row[0]
+    q = row[1]
+    r = row[2]
+    data.append([p, q])
+    label.append(r)
 
-# テーブルを得る --- (※3)
-table = db.table('fruits')
+# データの学習 --- (※3)
+clf = svm.SVC()
+clf.fit(data, label)
 
-# データをデータベースに挿入 --- (※4)
-table.insert( {'name': 'Banana', 'price': 600} )
-table.insert( {'name': 'Orange', 'price': 1200} )
-table.insert( {'name': 'Mango', 'price': 840} )
+# データを予測 --- (※4)
+pre = clf.predict(data)
+print("予測結果:", pre)
 
-# 全データを抽出して表示 --- (※5)
-print(table.all())
-
-# 特定のデータを抽出して表示
-# Orangeを検索 --- (※6)
-Item = Query()
-res = table.search(Item.name == 'Orange')
-print('Orange is ', res[0]['price'])
-
-# 値段が800円以上のものを抽出 --- (※7)
-print("800円以上のもの:")
-res = table.search(Item.price >= 800)
-for it in res:
-    print("-", it['name'])
+# 正解と合っているか結果を確認 --- (※5)
+ok = 0; total = 0
+for idx, answer in enumerate(label):
+    p = pre[idx]
+    if p == answer: ok += 1
+    total += 1
+print("正解率:", ok, "/", total, "=", ok/total)
