@@ -224,4 +224,5 @@ $ apt-get install -y libc6-dev build-essential
 $ pip3 install mecab-python3
 $ pip3 install janome
 $ pip3 install gensim
+$ pip3 install Pillow
 ```
