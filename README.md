@@ -143,4 +143,5 @@ mysql > CREATE DATABASE test;
 $ pip3 install tinydb
 $ pip3 install -U scikit-learn scipy matplotlib scikit-image
 $ pip3 install pandas
+$ pip3 install numpy
 ```
