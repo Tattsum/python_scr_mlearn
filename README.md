@@ -141,4 +141,6 @@ mysql > CREATE DATABASE test;
 追加するモジュール
 ```
 $ pip3 install tinydb
+$ pip3 install -U scikit-learn scipy matplotlib scikit-image
+$ pip3 install pandas
 ```
