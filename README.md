@@ -96,3 +96,35 @@ $ pip3 install pyyaml
 $ pip3 install openpyxl
 $ pip3 install pandas
 ```
+
+## Python + MySQLの開発環境
+dockerを利用し、Python+MySQLの開発環境を構築
+3-2のより
+```
+$ docker pull ubuntu:16.04
+$ docker run -it ubuntu:16.04
+```
+
+ログイン後
+```
+$ apt-get update
+$ apt-get upgrade
+$ apt-get install -y python3 python3-pip python3-requests
+$ apt-get install -y mysql-server
+$ apt-get install -y libmysqlclient-dev
+$ pip3 install mysqlclient
+```
+docker imageをcommit
+```
+$ docker ps -a
+# ここにあるコンテナIDをコピペ
+$ docker commit (コンテナID) ubuntu-mysql
+```
+
+日本語設定
+```
+docker run -it -v $HOME:$HOME \
+    -e LANG=ja_JP.UTF-8 \
+    -e PYTHONIOENCODING=utf_8 \
+    ubuntu-mysql /bin/bash
+```
