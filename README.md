@@ -226,3 +226,22 @@ $ pip3 install janome
 $ pip3 install gensim
 $ pip3 install Pillow
 ```
+
+## OpenCV のインストール
+画像処理ライブラリ
+- macOSの場合(Anacondaがインストール済み)
+```
+$ brew update
+$ brew tap homebrew/science
+$ brew install opencv
+```
+
+- Dockerのubuntu環境の場合
+```
+$ apt-get update
+$ apt-get upgrade
+$ apt-get install sudo
+$ git clone https://github.com/jayrambhia/Install-OpenCV.git
+$ cd Install-OpenCV/Ubuntu
+$ ./opencv_latest.sh
+```
