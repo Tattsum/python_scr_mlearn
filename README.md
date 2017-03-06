@@ -145,3 +145,11 @@ $ pip3 install -U scikit-learn scipy matplotlib scikit-image
 $ pip3 install pandas
 $ pip3 install numpy
 ```
+
+## Webアプリを実行する
+dockerでPython実行する場合は以下を参照
+```
+$ docker run -it \
+  -v $HOME:$HOME \
+  -p 8080:8080 mlearn
+```
